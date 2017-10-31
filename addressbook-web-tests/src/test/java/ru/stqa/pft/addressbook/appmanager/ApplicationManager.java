@@ -11,6 +11,7 @@ public class ApplicationManager {
     private NavigationHelper navigationHelper;
     private GroupHelper groupHelper;
     private SessionHelper sessionHelper;
+    private ContactHelper contactHelper;
 
     public void init() {
         String pathToGeckoDriver = Paths.get("D:\\distr\\geckodriver-v0.19.0-win64\\geckodriver.exe").toAbsolutePath().toString();
@@ -35,5 +36,9 @@ public class ApplicationManager {
 
     public NavigationHelper getNavigationHelper() {
         return navigationHelper;
+    }
+
+    public ContactHelper getContactHelper() {
+        return contactHelper;
     }
 }
