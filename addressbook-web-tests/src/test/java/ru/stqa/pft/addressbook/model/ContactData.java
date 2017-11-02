@@ -1,25 +1,31 @@
 package ru.stqa.pft.addressbook.model;
 
 public class ContactData {
-    private final String name;
-    private final String header;
-    private final String footer;
+    private final String firstname;
+    private final String middlename;
+    private final String lastname;
+    private final String nickname;
 
-    public ContactData(String name, String header, String footer) {
-        this.name = name;
-        this.header = header;
-        this.footer = footer;
+    public ContactData(String firstname, String middlename, String lastname, String nickname) {
+        this.firstname = firstname;
+        this.middlename = middlename;
+        this.lastname = lastname;
+        this.nickname = nickname;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstname() {
+        return firstname;
     }
 
-    public String getHeader() {
-        return header;
+    public String getMiddlename() {
+        return middlename;
     }
 
-    public String getFooter() {
-        return footer;
+    public String getLastname() {
+        return lastname;
+    }
+
+    public String getNickname() {
+        return nickname;
     }
 }
