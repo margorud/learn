@@ -27,11 +27,11 @@ public class ApplicationManager {
         String pathToGeckoDriver = Paths.get("D:\\distr\\browserdrivers\\geckodriver-v0.19.0-win64\\geckodriver.exe").toAbsolutePath().toString();
         System.setProperty("webdriver.gecko.driver", pathToGeckoDriver);
 
-        if (browser == BrowserType.FIREFOX) {
+        if (browser.equals(BrowserType.FIREFOX)) {
             wd = new FirefoxDriver();
-        } else if (browser == BrowserType.CHROME){
+        } else if (browser.equals(BrowserType.CHROME)){
             wd = new ChromeDriver();
-        } else if (browser == BrowserType.IE){
+        } else if (browser.equals(BrowserType.IE)){
             wd = new InternetExplorerDriver();
         }
 
