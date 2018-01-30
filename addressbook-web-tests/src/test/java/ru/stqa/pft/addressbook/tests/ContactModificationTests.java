@@ -13,19 +13,23 @@ public class ContactModificationTests extends TestBase {
     public void ensurePreconditions(){
         if (app.contact().list().size() == 0) {
             app.goTo().contactPage();
-            app.contact().create(new ContactData("test1", "test2", "test3", "test4", "test1"), true);
+            app.contact().create(new ContactData()
+                    .withFirstname("testforMod").withMiddlename("test1").withLastname("test1"), true);
         }
     }
 
     @Test (enabled = false)
     public void testContactModification() {
+        ContactData contactModify = new ContactData()
+                .withFirstname("qwe1").withMiddlename("qwe2").withLastname("qwe3").withNickname("qwe4").withGroup("test1");
         List<ContactData> before = app.contact().list();
-        ContactData contact = new ContactData("new", "mn", "ln", "nm", null);
         int index = before.size() - 1;
 
-        app.contact().modify(contact, index);
+        app.contact().modify(contactModify, index);
 
         List<ContactData> after = app.contact().list();
         Assert.assertEquals(after.size(), before.size());
+
+        //не реализовано сравнение списков из-за бага
     }
 }
